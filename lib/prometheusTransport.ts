@@ -1,13 +1,12 @@
 import { LogCallback, LogEntry } from 'winston';
-import TransportStream from 'winston-transport';
+import TransportStream, { TransportStreamOptions } from 'winston-transport';
 import { Counter, Registry, register as globalRegistry } from 'prom-client';
-import { TransportPrometheusOptions } from './transportPrometheusOptions';
 
 export class PrometheusTransport extends TransportStream {
     register: Registry;
     counter: Counter<string>;
 
-    constructor(opts?: TransportPrometheusOptions) {
+    constructor(opts?: PrometheusTransportOptions) {
         super(opts);
 
         this.register = opts?.register ?? globalRegistry;
@@ -24,4 +23,8 @@ export class PrometheusTransport extends TransportStream {
         this.counter.inc({ level: entry.level });
         callback();
     }
+}
+
+export interface PrometheusTransportOptions extends TransportStreamOptions {
+    register?: Registry;
 }
