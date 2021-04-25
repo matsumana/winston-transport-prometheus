@@ -1,24 +1,23 @@
 import * as winston from 'winston';
-import { Counter, register } from 'prom-client';
+import { Counter, Registry, register as globalRegistry } from 'prom-client';
 import { PrometheusTransport } from '../lib';
 
-let sut: PrometheusTransport;
-
 beforeEach(() => {
-    const metric = register.getSingleMetric('winston_events_total');
+    const metric = globalRegistry.getSingleMetric('winston_events_total');
     if (metric) {
-        register.removeSingleMetric('winston_events_total');
+        globalRegistry.removeSingleMetric('winston_events_total');
     }
-    sut = new PrometheusTransport();
 });
 
 describe('PrometheusTransport', () => {
     it('call log() with debug, one time', async () => {
+        const sut = new PrometheusTransport();
+
         sut.log({ level: 'debug', message: 'foo' }, () => {
             // do nothing
         });
 
-        const actual = register.getSingleMetric('winston_events_total');
+        const actual = globalRegistry.getSingleMetric('winston_events_total');
         expect(actual).toBeInstanceOf(Counter);
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -32,13 +31,15 @@ describe('PrometheusTransport', () => {
     });
 
     it('call log() with error, multiple times', async () => {
+        const sut = new PrometheusTransport();
+
         for (let i = 0; i < 5; i++) {
             sut.log({ level: 'error', message: 'foo' }, () => {
                 // do nothing
             });
         }
 
-        const actual = register.getSingleMetric('winston_events_total');
+        const actual = globalRegistry.getSingleMetric('winston_events_total');
         expect(actual).toBeInstanceOf(Counter);
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -52,6 +53,8 @@ describe('PrometheusTransport', () => {
     });
 
     it('call log() multiple log levels', async () => {
+        const sut = new PrometheusTransport();
+
         sut.log({ level: 'debug', message: 'foo' }, () => {
             // do nothing
         });
@@ -64,7 +67,7 @@ describe('PrometheusTransport', () => {
             });
         }
 
-        const actual = register.getSingleMetric('winston_events_total');
+        const actual = globalRegistry.getSingleMetric('winston_events_total');
         expect(actual).toBeInstanceOf(Counter);
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -86,6 +89,8 @@ describe('PrometheusTransport', () => {
     });
 
     it('call log() with winston Logger', async () => {
+        const sut = new PrometheusTransport();
+
         const logger = winston.createLogger({
             level: 'info',
             format: winston.format.simple(),
@@ -100,7 +105,7 @@ describe('PrometheusTransport', () => {
         logger.error('corge');
         logger.log('error', 'grault');
 
-        const actual = register.getSingleMetric('winston_events_total');
+        const actual = globalRegistry.getSingleMetric('winston_events_total');
         expect(actual).toBeInstanceOf(Counter);
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -119,5 +124,66 @@ describe('PrometheusTransport', () => {
         const error = metrics.values[2];
         expect(error.labels).toEqual({ level: 'error' });
         expect(error.value).toBe(3);
+    });
+
+    it('call log() with winston Logger and override log level setting', async () => {
+        const sut = new PrometheusTransport({ level: 'debug' });
+
+        const logger = winston.createLogger({
+            level: 'info',
+            format: winston.format.simple(),
+            transports: [new winston.transports.Console(), sut],
+        });
+
+        logger.debug('foo');
+        logger.log('debug', 'bar');
+        logger.info('baz');
+
+        const actual = globalRegistry.getSingleMetric('winston_events_total');
+        expect(actual).toBeInstanceOf(Counter);
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const metrics = await actual.get();
+        expect(metrics.values.length).toBe(2);
+
+        const debug = metrics.values[0];
+        expect(debug.labels).toEqual({ level: 'debug' });
+        expect(debug.value).toBe(2);
+
+        const info = metrics.values[1];
+        expect(info.labels).toEqual({ level: 'info' });
+        expect(info.value).toBe(1);
+    });
+
+    it('call log() with winston Logger and override prom-client register', async () => {
+        const myRegister = new Registry();
+        const sut = new PrometheusTransport({ register: myRegister });
+
+        const logger = winston.createLogger({
+            level: 'info',
+            format: winston.format.simple(),
+            transports: [new winston.transports.Console(), sut],
+        });
+
+        logger.debug('foo'); // since level is info (see above), will be excluded
+        logger.info('bar');
+        logger.log('info', 'baz');
+
+        expect(
+            globalRegistry.getSingleMetric('winston_events_total')
+        ).toBeUndefined();
+
+        const actual = myRegister.getSingleMetric('winston_events_total');
+        expect(actual).toBeInstanceOf(Counter);
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const metrics = await actual.get();
+        expect(metrics.values.length).toBe(1);
+
+        const info = metrics.values[0];
+        expect(info.labels).toEqual({ level: 'info' });
+        expect(info.value).toBe(2);
     });
 });
