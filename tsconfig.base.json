@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "pretty": true,
+        "allowSyntheticDefaultImports": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "allowJs": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "target": "ES5",
+        "lib": [
+            "ES2020"
+        ]
+    }
+}
