@@ -26,6 +26,7 @@
         "lint:eslint": "eslint --ext .js,.ts {lib,test}",
         "lint": "run-p lint:prettier lint:eslint",
         "test": "jest",
+        "clean": "rm -rf dist",
         "dev": "webpack --mode development",
         "build": "webpack --mode production"
     },
