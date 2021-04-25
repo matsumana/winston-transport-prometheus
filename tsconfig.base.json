@@ -11,10 +11,11 @@
         "noImplicitReturns": true,
         "allowJs": true,
         "declaration": true,
-        "declarationMap": true,
-        "sourceMap": true,
+        "declarationMap": false,
+        "sourceMap": false,
+        "module": "commonjs",
         "moduleResolution": "node",
-        "target": "ES5",
+        "target": "ES2015",
         "lib": [
             "ES2020"
         ]

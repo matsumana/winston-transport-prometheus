@@ -27,8 +27,7 @@
         "lint": "run-p lint:prettier lint:eslint",
         "test": "jest",
         "clean": "rm -rf dist",
-        "dev": "webpack --mode development",
-        "build": "webpack --mode production"
+        "build": "tsc"
     },
     "dependencies": {
         "winston": "^3.3.3",

@@ -1,5 +1,4 @@
 .eslintrc.js
 jest.config.js
-webpack.config.js
 dist/**/*.js
 *.d.ts
