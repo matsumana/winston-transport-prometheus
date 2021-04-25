@@ -10,7 +10,7 @@ export class PrometheusTransport extends TransportStream {
     constructor(opts?: TransportPrometheusOptions) {
         super(opts);
 
-        this.register = opts?.register || globalRegistry;
+        this.register = opts?.register ?? globalRegistry;
         this.counter = new Counter({
             name: 'winston_events_total',
             help: 'Number of logging events that made it to the logs',
