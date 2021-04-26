@@ -1,6 +1,6 @@
 {
-    "name": "winston-transport-prometheus",
-    "version": "0.1.0",
+    "name": "@matsumana/winston-transport-prometheus",
+    "version": "0.2.0",
     "description": "A winston metrics transport using Prometheus",
     "author": "Manabu Matsuzaki",
     "license": "Apache-2.0",
