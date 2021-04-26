@@ -28,7 +28,7 @@
         "lint:prettier:test": "prettier --check test",
         "lint:eslint:lib": "eslint --ext .js,.ts lib",
         "lint:eslint:test": "eslint --ext .js,.ts test",
-        "lint": "run-p lint:prettier:lib lint:eslint:test lint:prettier:lib lint:eslint:test",
+        "lint": "run-p lint:prettier:lib lint:prettier:test lint:eslint:lib lint:eslint:test",
         "test": "jest",
         "clean": "rm -rf dist",
         "build": "tsc"
