@@ -19,7 +19,10 @@ jobs:
                 paths:
                     - ~/.cache/yarn
             - run:
-                name: Run liny
+                name: Run ls
+                command: ls -l
+            - run:
+                name: Run lint
                 command: yarn lint
             - run:
                 name: Run test
