@@ -19,14 +19,11 @@ jobs:
                 paths:
                     - ~/.cache/yarn
             - run:
-                name: Run ls
-                command: ls -l
-            - run:
                 name: Run lint
-                command: yarn lint
+                command: bash -c 'yarn lint'
             - run:
                 name: Run test
-                command: yarn test
+                command: bash -c 'yarn test'
             - run:
                 name: Run build
-                command: yarn build
+                command: bash -c 'yarn build'
