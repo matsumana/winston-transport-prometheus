@@ -20,10 +20,10 @@ jobs:
                     - ~/.cache/yarn
             - run:
                 name: Run lint
-                command: bash -c 'yarn lint'
+                command: lint:eslint
             - run:
                 name: Run test
-                command: bash -c 'yarn test'
+                command: yarn test
             - run:
                 name: Run build
-                command: bash -c 'yarn build'
+                command: yarn build
