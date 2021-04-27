@@ -3,11 +3,11 @@
     "license": "Apache-2.0",
     "private": true,
     "scripts": {
-        "fix:prettier": "prettier --write ./src/*.ts",
-        "fix:eslint": "eslint --ext .js,.ts --fix ./src/*.ts",
+        "fix:prettier": "prettier --write ./src/*.js",
+        "fix:eslint": "eslint --ext .js --fix ./src/*.js",
         "fix": "run-s fix:prettier fix:eslint",
-        "lint:prettier": "prettier --check ./src/*.ts",
-        "lint:eslint": "eslint --ext .js,.ts ./src/*.ts",
+        "lint:prettier": "prettier --check ./src/*.js",
+        "lint:eslint": "eslint --ext .js ./src/*.js",
         "lint": "run-p lint:prettier lint:eslint",
         "clean": "rm -rf dist",
         "build:dev": "webpack --mode development",
@@ -16,8 +16,6 @@
     },
     "dependencies": {
         "@matsumana/winston-transport-prometheus": "^0.2.1",
-        "@types/express": "^4.17.11",
-        "@types/express-prometheus-middleware": "^1.2.0",
         "express": "^4.17.1",
         "express-prometheus-middleware": "^1.2.0",
         "prom-client": "^13.1.0"
