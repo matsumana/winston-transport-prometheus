@@ -52,10 +52,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@matsumana/winston-transport-prometheus@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@matsumana/winston-transport-prometheus/-/winston-transport-prometheus-0.2.1.tgz#5c0b1ffe03764cc0fc9899e3c49d74d790d7e26c"
-  integrity sha512-4PFWhUpHg3T37JXh3nFSISf90Y3DTu2cxfbbwkOeCMtSnVeU0uOBjoBG59qm+3eNce4HXoEItKqCk0y6y2cUAg==
+"@matsumana/winston-transport-prometheus@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@matsumana/winston-transport-prometheus/-/winston-transport-prometheus-1.0.0.tgz#b4b70cdc4c4ded3762ef8ebcf5e9a3dcba79956a"
+  integrity sha512-72inlRZuDmeJoYebvM3B7eljxNEJklIgut5Qm61IjjXD5XnJ7EU46VxPp2S4BXlbnxiMRDU1OXFUJ5p9cfT/qw==
   dependencies:
     winston "^3.3.3"
     winston-transport "^4.4.0"
