@@ -15,7 +15,7 @@
         "start": "node dist/bundle.js"
     },
     "dependencies": {
-        "@matsumana/winston-transport-prometheus": "^1.0.0",
+        "@matsumana/winston-transport-prometheus": "^1.0.1",
         "express": "^4.17.1",
         "express-prometheus-middleware": "^1.2.0",
         "prom-client": "^13.1.0"
