@@ -52,10 +52,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@matsumana/winston-transport-prometheus@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@matsumana/winston-transport-prometheus/-/winston-transport-prometheus-1.0.0.tgz#b4b70cdc4c4ded3762ef8ebcf5e9a3dcba79956a"
-  integrity sha512-72inlRZuDmeJoYebvM3B7eljxNEJklIgut5Qm61IjjXD5XnJ7EU46VxPp2S4BXlbnxiMRDU1OXFUJ5p9cfT/qw==
+"@matsumana/winston-transport-prometheus@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@matsumana/winston-transport-prometheus/-/winston-transport-prometheus-1.0.1.tgz#f6fdbf562d48c7736f624f6241e5b433a699504c"
+  integrity sha512-vHySz+L8fRw7iif8n+cmoXVYcAeIo1EYOClGjT8fnsgjPm+yGP4XYrPI1jdwFOCa0VPnCGCB/8wrIFfH7mkd+g==
   dependencies:
     winston "^3.3.3"
     winston-transport "^4.4.0"
@@ -538,9 +538,9 @@ callsites@^3.0.0:
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
 caniuse-lite@^1.0.30001214:
-  version "1.0.30001218"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001218.tgz#9b44f6ed16f875db6373e2debd4d14a07359002f"
-  integrity sha512-0ASydOWSy3bB88FbDpJSTt+PfDwnMqrym3yRZfqG8EXSQ06OZhF+q5wgYP/EN+jJMERItNcDQUqMyNjzZ+r5+Q==
+  version "1.0.30001219"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001219.tgz#5bfa5d0519f41f993618bd318f606a4c4c16156b"
+  integrity sha512-c0yixVG4v9KBc/tQ2rlbB3A/bgBFRvl8h8M4IeUbqCca4gsiCfvtaheUssbnux/Mb66Vjz7x8yYjDgYcNQOhyQ==
 
 chalk@^2.0.0, chalk@^2.4.1:
   version "2.4.2"
@@ -786,9 +786,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.719:
-  version "1.3.722"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.722.tgz#621657f79e7f65402e71aa3403bc941f3a4af0a0"
-  integrity sha512-aAsc906l0RBsVTsGTK+KirVfey9eNtxyejdkbNzkISGxb7AFna3Kf0qvsp8tMttzBt9Bz3HddtYQ+++/PZtRYA==
+  version "1.3.723"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.723.tgz#52769a75635342a4db29af5f1e40bd3dad02c877"
+  integrity sha512-L+WXyXI7c7+G1V8ANzRsPI5giiimLAUDC6Zs1ojHHPhYXb3k/iTABFmWjivEtsWrRQymjnO66/rO2ZTABGdmWg==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2899,9 +2899,9 @@ webpack-sources@^2.1.1:
     source-map "^0.6.1"
 
 webpack@^5.35.1:
-  version "5.36.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.36.0.tgz#d008da31b721f8fecce88ef2adaf1b16dc2161d1"
-  integrity sha512-HdOhLXClUEwTnzQnzpSG9iL00ej23ojvfnGpF49ba0MkuAT2q+WhQilHFFJHOIVRBqbzakQ1vCWQV2K+QLX0Qw==
+  version "5.36.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.36.1.tgz#d82bad3384f84ed45a8de3844c31730f56361ab7"
+  integrity sha512-2u25a82T+6quAxSlzEpN/R/RICwt20ONU3z3Ko05S8KVH9FXILcBYb2hD/rQtZT5y7lRAIsIIs05pdndY7ourQ==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.47"
