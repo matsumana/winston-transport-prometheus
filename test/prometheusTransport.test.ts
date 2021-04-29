@@ -1,4 +1,4 @@
-import * as winston from 'winston';
+import winston from 'winston';
 import { Counter, Registry, register as globalRegistry } from 'prom-client';
 import { PrometheusTransport } from '../lib';
 
