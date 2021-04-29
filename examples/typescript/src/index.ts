@@ -23,5 +23,5 @@ app.get('/', (_req: Request, res: Response) => {
     res.send('It works!');
 });
 app.listen(port, () => {
-    console.log(`Started (port=${port})`);
+    logger.info(`Started (port=${port})`);
 });
