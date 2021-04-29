@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/%2540matsumana%252Fwinston-transport-prometheus)![Dependencies](https://img.shields.io/david/matsumana/winston-transport-prometheus)![npm downloads](https://img.shields.io/npm/dm/@matsumana/winston-transport-prometheus)](https://www.npmjs.com/package/@matsumana/winston-transport-prometheus)
 
 [![CircleCI](https://circleci.com/gh/matsumana/winston-transport-prometheus/tree/main.svg?style=shield)](https://app.circleci.com/pipelines/github/matsumana/winston-transport-prometheus?branch=main)
+[![Known Vulnerabilities](https://snyk.io/test/github/matsumana/winston-transport-prometheus/badge.svg)](https://snyk.io/test/github/matsumana/winston-transport-prometheus)
 
 ## Exported metrics
 
