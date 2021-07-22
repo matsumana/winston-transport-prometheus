@@ -16,10 +16,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.3.tgz#90420f9f9c6d3987f176a19a7d8e764271a2f55d"
   integrity sha512-Fxt+AfXgjMoin2maPIYzFZnQjAXjAL0PHscM5pRTtatFqB+vZxAM9tLp2Optnuw3QOQC40jTNeGYFOMvyf7v9g==
 
-"@matsumana/winston-transport-prometheus@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@matsumana/winston-transport-prometheus/-/winston-transport-prometheus-1.0.1.tgz#f6fdbf562d48c7736f624f6241e5b433a699504c"
-  integrity sha512-vHySz+L8fRw7iif8n+cmoXVYcAeIo1EYOClGjT8fnsgjPm+yGP4XYrPI1jdwFOCa0VPnCGCB/8wrIFfH7mkd+g==
+"@matsumana/winston-transport-prometheus@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@matsumana/winston-transport-prometheus/-/winston-transport-prometheus-1.0.2.tgz#9e48d9178067586abaec5aa75c5279312c8e8863"
+  integrity sha512-0LP6xtsLypWRaRCZ/lHAXliOfRMt4cOMxoCg/+DaD7gSHvtUu6p+y5Xi62go3vofwPPvlCD9JTLG0JxqwZKLKw==
   dependencies:
     winston "^3.3.3"
     winston-transport "^4.4.0"
