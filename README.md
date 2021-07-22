@@ -4,8 +4,10 @@
 ![npm version](https://img.shields.io/npm/v/@matsumana/winston-transport-prometheus)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@matsumana/winston-transport-prometheus)
 ![Dependencies](https://img.shields.io/david/matsumana/winston-transport-prometheus)
-![npm downloads](https://img.shields.io/npm/dm/@matsumana/winston-transport-prometheus)
 ](https://www.npmjs.com/package/@matsumana/winston-transport-prometheus)
+[
+![npm downloads](https://img.shields.io/npm/dm/@matsumana/winston-transport-prometheus)
+](https://npmcharts.com/compare/@matsumana/winston-transport-prometheus)
 
 [
 ![CircleCI](https://circleci.com/gh/matsumana/winston-transport-prometheus/tree/main.svg?style=shield)
