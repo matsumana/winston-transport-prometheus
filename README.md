@@ -19,7 +19,7 @@
 ## Exported metrics
 
 | name                 | metrics type | label |
-|----------------------|--------------|-------|
+| -------------------- | ------------ | ----- |
 | winston_events_total | counter      | level |
 
 e.g.
@@ -34,7 +34,7 @@ winston_events_total{level="info"} 3
 
 winston-transport-prometheus can be used in the same way as the winston's standard transports.
 
-*Please refer to the [examples](examples) directory for more details
+\*Please refer to the [examples](examples) directory for more details
 
 e.g.
 

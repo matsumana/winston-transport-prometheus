@@ -16,7 +16,7 @@ app.use(
         collectGCMetrics: true,
         requestLengthBuckets: [512, 1024, 5120, 10240, 51200, 102400],
         responseLengthBuckets: [512, 1024, 5120, 10240, 51200, 102400],
-    })
+    }),
 );
 app.get('/', (req, res) => {
     logger.info('foo');
