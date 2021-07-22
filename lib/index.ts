@@ -1,6 +1,4 @@
-import {
+export {
     PrometheusTransport,
     PrometheusTransportOptions,
 } from './prometheusTransport';
-
-export { PrometheusTransport, PrometheusTransportOptions };
