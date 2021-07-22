@@ -171,7 +171,7 @@ describe('PrometheusTransport', () => {
         logger.log('info', 'baz');
 
         expect(
-            globalRegistry.getSingleMetric('winston_events_total')
+            globalRegistry.getSingleMetric('winston_events_total'),
         ).toBeUndefined();
 
         const actual = myRegister.getSingleMetric('winston_events_total');
