@@ -7,9 +7,12 @@ import Prometheus from 'prom-client';
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.simple(),
-    transports: [new winston.transports.Console(), new PrometheusTransport({
-        register: Prometheus.register,
-    })],
+    transports: [
+        new winston.transports.Console(),
+        new PrometheusTransport({
+            register: Prometheus.register,
+        }),
+    ],
 });
 
 const port = process.env.PORT || 8080;
