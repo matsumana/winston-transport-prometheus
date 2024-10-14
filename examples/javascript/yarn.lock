@@ -74,7 +74,13 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@matsumana/winston-transport-prometheus@file:../..":
-  version "1.1.0"
+  version "2.0.0"
+  dependencies:
+    winston "^3.15.0"
+    winston-transport "^4.8.0"
+
+"@matsumana/winston-transport-prometheus@file:../../../winston-transport-prometheus":
+  version "2.0.0"
   dependencies:
     winston "^3.15.0"
     winston-transport "^4.8.0"
