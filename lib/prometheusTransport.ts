@@ -1,4 +1,4 @@
-import { LogCallback, LogEntry } from 'winston';
+import { LogEntry } from 'winston';
 import TransportStream, { TransportStreamOptions } from 'winston-transport';
 import { Counter, Registry, register as globalRegistry } from 'prom-client';
 
@@ -12,16 +12,16 @@ export class PrometheusTransport extends TransportStream {
         this.register = opts?.register ?? globalRegistry;
         this.counter = new Counter({
             name: 'winston_events_total',
-            help: 'Number of logging events that made it to the logs',
+            help: 'The number of logging events that made it to the logs',
             labelNames: ['level'],
             registers: [this.register],
         });
     }
 
-    log(entry: LogEntry, callback: LogCallback) {
+    log(entry: LogEntry, next: () => void) {
         setImmediate(() => this.emit('logged', entry));
         this.counter.inc({ level: entry.level });
-        callback();
+        next();
     }
 }
 

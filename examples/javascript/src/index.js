@@ -1,23 +1,22 @@
 import express from 'express';
-import promMid from 'express-prometheus-middleware';
+import { ExpressPrometheusMiddleware } from '@matteodisabatino/express-prometheus-middleware';
 import winston from 'winston';
 import { PrometheusTransport } from '@matsumana/winston-transport-prometheus';
+import Prometheus from 'prom-client';
 
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.simple(),
-    transports: [new winston.transports.Console(), new PrometheusTransport()],
+    transports: [new winston.transports.Console(), new PrometheusTransport({
+        register: Prometheus.register,
+    })],
 });
 
 const port = process.env.PORT || 8080;
 const app = express();
-app.use(
-    promMid({
-        collectGCMetrics: true,
-        requestLengthBuckets: [512, 1024, 5120, 10240, 51200, 102400],
-        responseLengthBuckets: [512, 1024, 5120, 10240, 51200, 102400],
-    }),
-);
+const epm = new ExpressPrometheusMiddleware();
+
+app.use(epm.handler);
 app.get('/', (req, res) => {
     logger.info('foo');
     res.send('It works!');
