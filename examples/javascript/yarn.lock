@@ -79,12 +79,6 @@
     winston "^3.15.0"
     winston-transport "^4.8.0"
 
-"@matsumana/winston-transport-prometheus@file:../../../winston-transport-prometheus":
-  version "2.0.0"
-  dependencies:
-    winston "^3.15.0"
-    winston-transport "^4.8.0"
-
 "@matteodisabatino/express-prometheus-middleware@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@matteodisabatino/express-prometheus-middleware/-/express-prometheus-middleware-4.2.1.tgz#a02866a467c7b8b1230dc8fe55561f43ec355dc9"
