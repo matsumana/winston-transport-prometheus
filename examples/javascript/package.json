@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@matsumana/winston-transport-prometheus": "file:../../../winston-transport-prometheus",
-        "@matteodisabatino/express-prometheus-middleware": "^4.2.1",
+        "@matteodisabatino/express-prometheus-middleware": "^6.0.0",
         "express": "^4.21.1",
         "prom-client": "^15.1.3"
     },
